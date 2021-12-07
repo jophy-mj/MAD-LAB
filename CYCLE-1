@@ -1,0 +1,347 @@
+1.Design a login page
+
+activity_main.xml
+
+LinearLayout android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/beige">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:hint="Name"
+        android:inputType="textPersonName"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPassword"
+        android:hint="Password"
+        android:inputType="textPassword"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/btLogin"
+        android:onClick="click" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btCancel"
+        android:onClick="click"/>
+</LinearLayout>
+MainActivity.java
+
+package com.example.sjcet.jophy1;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+    TextView tv;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv=findViewById(R.id.tv1);
+    }
+    public void click(View view) {
+    }
+}
+
+2.Change the cntent in the textview on button click.
+
+activity_main.xml
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jophy"/>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change"
+        android:onClick="change"/>
+</LinearLayout>
+MainActivity.java
+
+package com.example.sjcet.pg2;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.view.View;
+public class MainActivity extends AppCompatActivity {
+    TextView tv1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv1 = findViewById(R.id.tv);
+    }
+    public void change(View view) {
+        tv1.setText("Essa");
+    }
+}
+3.Read a content from edittext and print it n a textview.
+activity_main.xml
+
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="enter your name"
+        android:layout_gravity="center"
+        android:id="@+id/et1" />
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="display"
+        android:onClick="display"/>
+</LinearLayout>
+
+MainActivity.java
+
+package com.example.sjcet.pg3;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+    TextView tv;
+    EditText et1;
+    Button btn1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv = findViewById(R.id.tv);
+        et1 =findViewById(R.id.et1);
+        btn1=findViewById(R.id.btn1);
+    }
+    public void display(View view) {
+        String content = et1 .getText().toString();
+        tv.setText(content);
+    }
+}
+
+4.Change the background color on a button click
+
+activity_main.xml
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv"
+        android:gravity="center"
+        android:text="would you like this"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change"
+        android:id="@+id/b1"
+        android:onClick="click"/>
+</LinearLayout>
+
+
+MainActivity.java
+
+package com.example.sjcet.pg4;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+    TextView tv;
+    Button b1;
+    View v1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1 = findViewById(R.id.b1);
+        v1 = this .getWindow().getDecorView();
+    }
+    public void click(View view) {
+        v1.setBackgroundResource(android.R.color.holo_blue_dark);
+    }
+}
+
+5. Create a simple calculator
+
+
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:layout_width="match_parent"
+xmlns:android="http://schemas."
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="CALCULATOR"
+android:textSize="25sp"
+android:layout_marginBottom="16dp"
+android:textColor="@android:color/black" />
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal">
+<EditText
+android:layout_width="102dp"
+android:layout_height="59dp"
+android:id="@+id/et1"
+android:hint="Value 1"
+android:layout_marginHorizontal="50dp" />
+<EditText
+android:layout_width="102dp"
+android:layout_height="59dp"android:id="@+id/et2"
+android:hint="Value 2"
+android:layout_marginHorizontal="50dp"/>
+</LinearLayout>
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginBottom="20dp">
+<EditText
+android:textSize="40sp"
+android:id="@+id/answer"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginHorizontal="50dp"
+android:text="Result" />
+</LinearLayout>
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="horizontal">
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/sub"
+android:text="-"
+android:textSize="25sp"
+android:layout_marginBottom="16dp"
+android:onClick="add"/>
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/add"
+android:text="+"
+android:textSize="25sp"
+android:layout_marginBottom="16dp"
+android:onClick="sum"/>
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/mul"
+android:text="*"
+android:textSize="25sp"
+android:layout_marginBottom="16dp"
+android:onClick="mult"/>
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/div"
+android:text="/"
+android:textSize="25sp"
+android:layout_marginBottom="16dp"
+android:onClick="divi"/>
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/equlas"
+android:text="="
+android:textSize="25sp"
+android:layout_marginBottom="16dp"
+android:onClick="Eql"/>
+</LinearLayout></LinearLayout>
+
+MainActivity.java
+
+public class MainActivity extends AppCompatActivity {
+EditText e1;
+EditText e2;
+Button add;
+Button sub,mul,div,equal;
+EditText ans;
+double res = 0;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+e1 = findViewById(R.id.et1);
+e2 = findViewById(R.id.et2);
+add = findViewById(R.id.add);
+sub = findViewById(R.id.sub);
+div = findViewById(R.id.div);
+mul = findViewById(R.id.mul);
+ans = findViewById(R.id.answer);
+}
+public void add(View view) {
+double a = Double.parseDouble(e1.getText().toString());
+double b = Double.parseDouble(e2.getText().toString());
+res = a - b;
+}
+public void Eql(View view) {
+String ans1 = String.valueOf(res);
+ans.setText(ans1);
+res= 0;
+}
+public void sum(View view) {
+double a = Double.parseDouble(e1.getText().toString());
+double b = Double.parseDouble(e2.getText().toString());
+res = a + b;
+}
+public void mult(View view) {
+double a = Double.parseDouble(e1.getText().toString());
+double b = Double.parseDouble(e2.getText().toString());
+res = a * b;
+}
+public void divi(View view) {
+double a = Double.parseDouble(e1.getText().toString());
+double b = Double.parseDouble(e2.getText().toString());
+res = a / b;
+}
+}
+
+
+
+
